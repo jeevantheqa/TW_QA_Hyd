@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="suite1" duration-ms="28808" started-at="2016-11-02T06:06:13Z" finished-at="2016-11-02T06:06:42Z">
+    <groups>
+      <group name="Smoke">
+        <method signature="Driver.write_a_blog()[pri:0, instance:tw.Driver@46f5f779]" name="write_a_blog" class="tw.Driver"/>
+      </group> <!-- Smoke -->
+    </groups>
+    <test name="Ant test" duration-ms="28808" started-at="2016-11-02T06:06:13Z" finished-at="2016-11-02T06:06:42Z">
+      <class name="tw.Driver">
+        <test-method status="PASS" signature="start()[pri:0, instance:tw.Driver@46f5f779]" name="start" is-config="true" duration-ms="12513" started-at="2016-11-02T11:36:14Z" finished-at="2016-11-02T11:36:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method status="PASS" signature="write_a_blog()[pri:0, instance:tw.Driver@46f5f779]" name="write_a_blog" duration-ms="15755" started-at="2016-11-02T11:36:26Z" finished-at="2016-11-02T11:36:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- write_a_blog -->
+        <test-method status="PASS" signature="exit()[pri:0, instance:tw.Driver@46f5f779]" name="exit" is-config="true" duration-ms="518" started-at="2016-11-02T11:36:42Z" finished-at="2016-11-02T11:36:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exit -->
+      </class> <!-- tw.Driver -->
+    </test> <!-- Ant test -->
+  </suite> <!-- suite1 -->
+</testng-results>

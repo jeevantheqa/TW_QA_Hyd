@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project name="SampleTest" basedir="." default="Test">
+	<property environment="env" />
+	<property name="DEBUG" value="true" />
+	<property name="VERBOSE" value="true" />
+	<property name="TARGET" value="1.6" />
+	<property name="build.dir" value="bin" />
+	<property name="xms" value="-Xms256m" />
+	<property name="xmx" value="-Xmx1024m" />
+	<property name="src.dir" location="${basedir}/src" />
+	<property name="lib.dir" location="${basedir}/jars" />
+	<property name="bin.dir" location="${basedir}/bin" />
+	<propertyfile file="config.properties">
+		<entry key="browser_name" value="${Browser}" />
+		<entry key="url" value="${Url}" />
+		<entry key="groups_id" value="${Groups}" />
+	</propertyfile>
+
+	<path id="classpath">
+			 <pathelement path="${basedir}/bin"/>
+	    </path>
+	<path id="reference">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement location="${bin.dir}" />
+	</path>
+
+	<taskdef resource="testngtasks" classpath="${lib.dir}/testng-6.8.5.jar" />
+	
+	<target name="compile" depends="">
+				<delete>
+				    <fileset dir="bin" includes="**/*.class"/>
+				  </delete>
+				<delete>
+						    <fileset dir="test-output/junitreports" includes="**/*.xml"/>
+						  </delete>
+				
+				<javac srcdir="${basedir}/src" destdir="${basedir}/bin" >
+					<classpath refid="reference" />
+					</javac>
+			</target>
+
+	<target name="Test" depends="compile">
+		<!--testng outputdir="test-output" suitename="suite1">
+			<classpath refid="reference" />			
+			<xmlfileset dir="${basedir}" includes="testng.xml" />
+		</testng-->
+		<testng outputDir="${basedir}/test-output" suitename="suite1" groups="${Groups}">
+			<classpath refid="reference" />
+			<classpath refid="classpath" />
+			<classfileset dir="${basedir}/bin" includes="**/*.class" />
+		</testng>
+	</target>
+
+</project>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [suite1]">
+  <test name="Ant test(failed)">
+    <groups>
+      <run>
+        <include name="Smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="tw.Driver">
+        <methods>
+          <include name="write_a_blog"/>
+        </methods>
+      </class> <!-- tw.Driver -->
+    </classes>
+  </test> <!-- Ant test(failed) -->
+</suite> <!-- Failed suite [suite1] -->
